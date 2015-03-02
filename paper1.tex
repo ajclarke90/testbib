@@ -1,0 +1,230 @@
+% HEADER
+\documentclass[usenatbib, useAMS,usegraphicx]{mn2e}
+%\documentclass[usenatbib, useAMS,usegraphicx, doublespacing]{mn2e}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{amssymb}
+
+
+\newcommand{\kms}{\mbox{$\>{\rm km\, s^{-1}}$}}
+\newcommand{\masyr}{\mbox{$\>{\rm mas\, yr^{-1}}$}}
+\newcommand{\pc}{\>{\rm pc}}
+\newcommand{\kpc}{\mbox{$\>{\rm kpc}$}}
+\newcommand{\Gyr}{\mbox{$\>{\rm Gyr}$}}
+\newcommand{\yr}{\mbox{$\>{\rm yr}$}}
+\newcommand{\Msun}{\>{\rm M_{\odot}}}
+\newcommand{\Rd}{\mbox{$R_{\rm d}$}}
+\newcommand{\vgsr}{\mbox{$V_{\rm GSR}$}}
+\newcommand\degrees{^\circ}
+\newcommand{\avg}[1]{\mbox{$\left<{#1}\right>$}}
+\newcommand{\sig}[1]{\mbox{$\sigma_{#1}$}}
+\newcommand{\tm}[1]{\mbox{$t_{#1}$}}
+\newcommand{\teff}{\mbox{$\rm T_{eff}$}}
+\newcommand{\feh}{\mbox{$\rm [Fe/H]$}}
+\newcommand{\al}{\mbox{$\rm \alpha$}}
+\newcommand{\ofe}{\mbox{$\rm [O/Fe]$}}
+\newcommand{\alfe}{\mbox{$\rm [\alpha/Fe]$}}
+\newcommand{\logg}{\mbox{$\rm \log g$}}
+\newcommand{\nfe}{\mbox{$\rm N_{[Fe/H]}$}}
+\newcommand{\nalf}{\mbox{$\rm N_{[\alpha/Fe]}$}}
+
+\newcommand{\red}{\color{red}}
+
+\def\etal{{et al.}}
+\def\eg{{\it e.g.}}
+\def\etc{{\it etc.}}
+\def\ie{{\it i.e.}}
+\def\cf{{\it cf.}}
+
+% Journal definitions
+\def\araa{ARAA}% Annual Review of Astronomy and Astrophysics
+\def\aj{AJ}% Astronomical Journal
+\def\apj{ApJ}% Astrophysical Journal
+\def\apjl{ApJ}% Astrophysical Journal, Letters
+\def\apjs{ApJS}% Astrophysical Journal, Supplement
+\def\aap{A\&A}% Astronomy and Astrophysics
+\def\mnras{MNRAS}% Monthly Notices of the RAS
+\def\pasj{PASJ} % Publications of Astronomical Society Japan
+\def\pasp{PASP} % Publications of Astronomical Society of the Pacific
+\def\nat{Nature}% Nature
+\def\physrep{Physics Reports}
+\def\aaps{A\&AS}
+\def\prd{Phys. Rev. D.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FRONT MATTER
+\title[AMRs of Warped Discs]{Substructures in the age-metallicity relation of warped disc galaxies}
+\author[Clarke, Debattista and Ro\v{s}kar]
+{Adam J. Clarke,$^1$\thanks{E-mail: ajclarke@uclan.ac.uk}  Victor P. Debattista,$^1$ Rok Ro\v{s}kar,$^2$ \\
+$^1$Jeremiah Horrocks Institute, University of Central Lancashire, Preston, PR1 2HE, UK \\
+$^2$ Institute for Theoretical Physics, University of Z\"{u}rich, Winterthurerstrasse  190, CH-8057 Z\"{u}rich, Switzerland}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONTENT
+\begin{document}
+
+
+\date{{\it Draft version on \today}}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{----}
+\maketitle
+
+\label{firstpage}
+
+\begin{abstract}
+Lorum ipsum dolor sit amet ....
+\end{abstract}
+
+\begin{keywords}
+  Galaxy: disc --
+  Galaxy: kinematics and dynamics --
+  Galaxy: structure --
+  galaxies: kinematics and dynamics --
+  galaxies: interactions/evolution --
+  galaxies: spiral
+\end{keywords}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction} % XUV Disks - SF IN WARPS+extended
+
+Understanding galaxy evolution is an important part of modern astrophysics. With the launch of the European Space Agency's (ESA) \emph{Gaia} mission on the 19th December 2013, astronomers will soon have access to a large quantity of Galactic data, the understanding of which will require detailed knowledge of the secular evolution of the Milky Way. These data will be expanded on using the Large Synoptic Survey Telescope \emph{LSST}, which aims to find the fundamental properties of all stars within 300pc of the Sun \citep{Ivezic2008}, including position, metallicity and proper motions. It also aims to map the metallicity, kinematics and spatial profile of the Sagittarius dwarf tidal stream, which may be the cause of our own warp \citep{Weinberg1998}.
+
+Historically stars have been considered to orbit a galaxy at a constant radius, deviating only due to orbital eccentricities. \cite{sellwood2002} showed that a relationship existed between a change in angular momentum and the induced change in random velocities of stars interacting with transient spiral structures. Importantly, at corotation  resonance ($\Omega = \Omega_{p}$), this mechanism allows stars to increase or decrease their galactocentric radii without causing an increase in eccentricity, allowing for a large redistribution of stars without heating the disc. This is known as radial migration. Other mechanisms for driving migration have been suggested such as bar-spiral resonance overlap \citep{minchev2010, minchev2011} and disc perturbations from cosmologically motivated satellite accretion \citep{bird2012}, the former of which has been shown to heat the disc, leading to systems that do not conform to observational constraints on velocity dispersion \citep{roskar2011}.
+
+Recent chemical tagging and studies of the Sun's peculiar velocity have been used to try and identify why the Sun has properties differing from other stars in the local neighborhood and infer which globular cluster the Sun may have been born in \citep{Pichardo2012}. Other works have used simulations to study whether the motion of the Sun can be used to trace the birth location the in Milky Way \citep{Martinez-Barbosa2014}, but only take into consideration long-lived spirals as opposed to transient spiral structures, which do not cause large changes in radial motion \citep{sellwood2002}.  Radial migration via transient spiral interactions differs from heating in that it leaves no imprint on the peculiar velocities of stars. As such if the Sun has migrated in this manner, it will be very difficult to locate the birth location solely from phase-space characteristics.
+
+Migration also has implications for many observed galactic properties. As a galaxy ages and feedback mechanisms enrich the interstellar medium (ISM) with ever heavier metals, we expect to find an age-metallicity relation (AMR). Early photometric observations of the solar neighborhood agreed with this relation \citep{twarog1980a}, however recent surveys have shown that the AMR is flatter and broader than expected \citep{Edvardsson1993a,Nordstrom2004,Haywood2008}. They concluded that the AMR was not evident in the earlier studies because restricting a sample to F type dwarfs would exclude any old, metal-rich stars if they existed. In all these spectroscopic surveys, the limiting uncertainty is in the age estimation, given that it requires an accurate knowledge of the stellar mass. \cite{Nordstrom2004} investigated whether eccentricity alone could account for the `blurred' AMR, but concluded that it could only attribute to $50\%$ of the observed scatter.
+
+If migration is driven by transient spiral structure \citep{sellwood2002, roskar2008}, then it is expected that in the thick discs of galaxies, migration may be less efficient due to a lack of spirals \citep{elmegreen2011}. Recent simulations have shown that in fact, migration is reduced by vertical motions but the maximum changes in radius are similar for thick and thin disc stars \citep{Solway2012}. Furthermore, since many extended spiral galaxies are shown to exhibit warped structure {\red ref?} it is important to understand the effect this has on migration efficiency. Observations of M31 have shown that the warped region contains a strong relation between age and metallicity \citep{Bernard2012}. Warps have been shown to seed a sharp decrease in star-formation and could be the cause of `breaks' \citep{Sanchez-Blazquez2009}.It is unclear if a warp being present lowers the efficiency of migration, or if this has any effect on the AMR of a galaxy.
+
+
+This paper is organized as follows: In Section \ref{sec:sim} we discuss our simulation method and setup. In Section \ref{sec:results} we discuss how the inclusion of a warp in a system effects the AMR and finally in Section \ref{sec:conclusions} we conclude and make final remarks.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Simulations}\label{sec:sim}
+
+Our initial conditions follow a NFW dark matter halo \citep{navarro1995} in which we embed a spherical corona of gas, with a temperature suitable to approximate hydrostatic equilibrium, and impart an angular momentum to promote disc formation. We run the simulation for ten billion years with GASOLINE \citep{wadsley2004} the smooth particle hydrodynamics extension to the N-body tree-code PKDGRAV \citep{stadel2000a}. This length of simulation can be considered comparable to disc formation and evolution since the time of the last gas rich major merger as suggested from cosmological simulations \citep{Brook2004}. Once the simulation begins, the gas cools and collapses, and once the density and temperature are less than 0.1 cm$^{-3}$ and 15,000 K respectively, star formation and supernova feedback cycles are initiated as described in \cite{stinson2006}.
+
+Our initial conditions contain $2 \times 10^{6}$ gas and dark matter particles with particle masses $\sim 10^{5} \Msun$. Star particles form with 1/3 of the initial gas particle mass, equating to $ \sim 10^{{4}}$, at a rate given by
+
+
+\begin{equation}
+\frac{d \rho_{\star}}{dt} = c_{\star}\frac{\rho_{gas}}{t_{dyn}}.
+\end{equation}
+
+The constant efficiency, $c_{\star}$, enables us to adjust the star formation rate (SFR) to match observations \citep{stinson2006} and is set to 0.05. By taking the galaxy out of a cosmological context we improve the resolution, however our simulations have no \emph{a priori} assumptions about angular momentum, which has been shown to affect the galaxies evolution \citep{debattista2006}.
+
+The disc forms a warp at 3Gyr which persists for 2Gyr before falling into the disc. Figure \ref{fig:briggs} shows the warp in a Tip-LON (Line of nodes) diagram \citep{briggs1990}. We can see that the gas shows a warp extended from the stellar warp.
+
+\begin{figure*}
+   \centering
+   \includegraphics[scale=0.5,angle=-90]{plots/briggs.eps}
+   \caption{Brigg's Figures showing line-of-nodes (LON) for gas (green) and stars (red). A warp is shown between 3-5 Gyr which disappears at 6 Gyr with the disc remaining unwarped for the rest of the simulation. We can see that the gas warp generally extends further out than the stellar component and is more warped.}
+   \label{fig:briggs}
+\end{figure*}
+
+We compute the stellar orbits for two regions of the galaxy, a `solar neighborhood zone at $7 \le R \le 9 \kpc$ and a `post-break' zone at $22 \le R \le 25 \kpc$. The potential is fixed and the orbits are computed over a 2 \Gyr  time-period, where we record the minimum and maximum radius and the maximum height above the plane of the galaxy.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Results}\label{sec:results}
+
+Under the assumption that migration occurs evenly and efficiently across the disc, we expect that an AMR of the whole simulation should show a broad and flattened shape, as seen in observations of the Milky Way. We find, as shown in Figure \ref{fig:AMR} that the overall shape shows similarities to this, however also contains substructures, not present in observations or other simulations. These features are present across AMRs taken all over the disc. Figure \ref{fig:AMRsol} shows the AMR for a region $7 \le R \le 9 \kpc$.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/amr.png}
+   \caption{Mass weighted AMR for the whole galaxy. It is clear that whilst the overall shape is flattened and broad as expected if migration was occurring and efficient, there is a underlying substructure showing a clear relation between age and metallicity. Color-bar units $\Msun$.}
+   \label{fig:AMR}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/amrsol.png}
+   \caption{As Figure \ref{fig:AMR} but limited to the solar neighbourhood  $7 \le R \le 9 \kpc$. Color-bar units $\Msun$.}
+   \label{fig:AMRsol}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/deltaR_ecc.png}
+   \caption{Changes in radius ( self.s['rform'] - self.s['r']) compared with eccentricity for particles in the solar neighborhood. We find no correlation between how eccentric an orbit is and how much migration occurs. \emph{ \red It might be worth normalizing this plot on rows so that we can see if it makes a difference to the highly eccentric portion, since at the moment most of the particles are at low eccentricity.}}
+   \label{fig:deltaRecc}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/deltaR_zmax.png}
+   \caption{As Figure \ref{fig:deltaRecc} but compared with maximum height above the plane ($z_{max}$) showing that particles in the thick and thin disk migrate equally. }
+   \label{fig:delatRzmax}
+\end{figure}
+
+
+Whilst warps are most prominent in the outer regions of galaxies, they can in fact be considered to be a secondary disk overlaid on the main disk with an offset angle. Isolating particles that form in the warp is difficult, because a selection on radius and height above the plane fails to capture the low radial component. As such we have defined a parameter $\theta_{form}$, as the angle between the angular momentum vector of the stellar particle at formation, and the angular momentum vector of the inner region of the disc. If particles form in the disc, they should have $\theta_{form}$ close to zero, with stars forming in the bulge have values large due to their random motions. Particles with intermediate $\theta_{form}$ are considered ``warp" stars. This is shown in Figure \ref{fig:thetaform_rforms}.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/thetaform_rforms.png}
+   \caption{Histograms of formation radius with cuts on $\theta_{form}$. This allows us to easily separate out the bulge, disc and warp components. The histograms are normalized so the area under each curve is equal.}
+   \label{fig:thetaform_rforms}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/amr_thetacut.png}
+   \caption{AMR of stars that for in the warp, selected by taking a cut of $15.0 \leq \theta_{form} \leq 40.0$. We find a strong relation between age and metalicity, indicative that migration my not be as efficient in warps.}
+   \label{fig:amr_thetacut}
+\end{figure}
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/amr_disc.png}
+   \caption{AMR of stars that for in the warp, selected by taking a cut of $0.0 \leq \theta_{form} \leq 15.0$. The AMR is flat and broad as expected if the system has experienced a large amount of efficient migration.  }
+   \label{fig:amr_disc}
+\end{figure}
+
+The slope of this AMR is calculated by least-squares fitting as $-0.296 \pm 0.001 $. This is comparable to the AMR of the warped region of M31 found by \cite{Bernard2012}. \emph{ \red I would like to ask Bernard to give me a proper number for his slope for a good comparison. I have over-plotted this on Bernard's and they don't match perfectly. I haven't decided how to proceed with this paragraph. We can either mention that it is similar but not the same, or mention that we have an AMR but that the slope isn't consistent, which could be related to anything from our star formation rate, feedback mechanisms etc. }
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/deltaR_thetacuts.png}
+   \caption{ Histogram showing change in radius $(r_{form} - r_{final}$ for particles forming in the warp and the disc, selected by $\theta_{form}$. Migration is efficient for both stars forming in the warp and the disc.}
+   \label{fig:deltaR_thetacuts}
+\end{figure}
+
+This substructure begins at approximately 7.5 Gyr and lasts until approximately 4Gyr corresponding to the same time-range that our warp is present as shown in Figure \ref{fig:briggs}. Stars that form in the warp resist migration \emph{ \red need to show this somewhow} during their time in the warp. Once the warp dissipates into the disk, the stars are then capable of migrating. This is why the substructure is present at multiple radii. \emph{ \red It doesnt matter though if I go straight to the timestep that the warp is still formed, the plot of deltaR using thetaform cuts shows that both disc and warp stars are migrating equally! }
+
+
+In Figure \ref{fig:ring} we show that the second sub-structure in the AMR corresponds to stars forming at a constant radii, in a ring-like structure. This ring is centered on 10 kpc and has a diameter of roughly 2kpc. This remains constant throughout the lifetime of the warp, and formation stops once the warp dissipates, although the ring remains as a structure for the remained of our simulation. The vertical structure in the oldest few age bins corresponds to our pristine initial conditions, and can be largely ignored.
+
+\begin{figure}
+   \centering
+   \includegraphics[width=0.99\linewidth]{plots/ring.png}
+   \caption{Historgram showing the distribution of formation radius for particles forming in the second AMR feature. These particles form in a ring like structure, across many a large range of formation times. }
+   \label{fig:ring}
+\end{figure}
+
+% Now discuss how the ring can have an AMR. We surely expect the AMR to be flat even in a ring. Are rings physical structures or density waves such as spirals? Since they're axissymmetric they wont suffer from the winding problem.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}\label{sec:conclusions}
+
+%We have used N-body SPH simulations to consider the effect that outer disk features such as warps has on the AMR of a galaxy. We find that warps can lead to underlying substructures in the AMR that persist over the life-time of the galaxy. Furthermore, the presence of these substructures across a large range of radii is suggestive that the stars forming in the warp still migrate efficiently. Therefore we conclude that in-situ star formation in the warp with little migration leads to a relation between age and metallicity, and this is spread across the disc once the warp dissipates.
+
+% We could try and show this by plotting an AMR for the whole galaxy, but not with stars that have formed in the warp.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgments}
+
+The simulation used in this study was run at the High Performance Computer Facility of the University of Central Lancashire. We made use of PYNBODY (https://github.com/pynbody/pynbody) in our analysis for this paper.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{mn2e}
+\bibliography{/Users/ajclarke/Documents/bib/library.bib}
+
+\label{lastpage}
+
+\end{document}
